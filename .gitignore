@@ -1,1 +1,47 @@
-/.idea
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-specific
+/_vendor/
+/Godeps/
+/vendor/
+
+# Dependency directories (remove the comment below to include it)
+# /vendor/
+
+# The name of your binary (change this to main or whatever your executable is called)
+main
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture directories
+32
+64
+
+# Generated files
+bin/
+pkg/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+*.ids
