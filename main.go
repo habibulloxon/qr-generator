@@ -2,28 +2,37 @@ package main
 
 import (
 	"fmt"
+	"github.com/rs/xid"
 	"github.com/skip2/go-qrcode"
 	"io/ioutil"
 )
 
-func main() {
-	var link string
+func qrGenerator() {
+	uniqueId := xid.New().String()
 
-	fmt.Println("Enter link to generate QR: ")
-	fmt.Scanln(&link)
-
-	qrCode, err := qrcode.Encode(link, qrcode.Medium, 256)
+	qrCode, err := qrcode.Encode(uniqueId, qrcode.Medium, 256)
 	if err != nil {
 		fmt.Println("Error generating QR code:", err)
 		return
 	}
 
-	// Save the QR code to a file
-	err = ioutil.WriteFile("qrcode.png", qrCode, 0644)
+	fmt.Println(err)
+
+	err = ioutil.WriteFile(uniqueId+".png", qrCode, 0644)
 	if err != nil {
 		fmt.Println("Error saving QR code to file:", err)
 		return
 	}
 
-	fmt.Println("QR code generated successfully and saved to 'qrcode.png'!")
+	fmt.Println("QR code generated successfully and saved")
+}
+
+func main() {
+	var countQr int
+	fmt.Println("Enter the number of QR:")
+	fmt.Scanln(&countQr)
+
+	for i := 0; i < countQr; i++ {
+		qrGenerator()
+	}
 }
