@@ -24,3 +24,13 @@ Ensure you have Golang installed on your machine. If not, you can download it [h
 
    ```bash
    git clone https://github.com/your-username/qr-code-generator.git
+
+2. **Change into the project directory:**
+
+   ```bash
+   cd qr-code-generator
+
+3. **Run the application:**
+
+   ```bash
+   go run main.go
